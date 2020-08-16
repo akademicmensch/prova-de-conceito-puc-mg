@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://spring.io/guides/gs-producing-web-service"
+	targetNamespace="http://spring.io/guides/gs-producing-web-service"
+	elementFormDefault="qualified">
+
+	<xs:element name="getAllProcessesRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<!--  --><xs:element name="name" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="getProcessRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="name" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="getProcessResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="process" type="tns:process" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+
+	<xs:element name="getAllProcessesResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="process" maxOccurs="unbounded"
+					minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="process" type="tns:process" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+
+	<xs:complexType name="process">
+		<xs:sequence>
+			<xs:element name="id" type="xs:string" />
+			<xs:element name="name" type="xs:string" />
+			<xs:element name="peopleEnvolved" type="xs:int" />
+			<xs:element name="site" type="xs:string" />
+			<xs:element name="enterpriseCategory" type="xs:string" />
+			<xs:element name="detail" type="tns:detail" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="detail">
+		<xs:sequence>
+			<xs:element name="step1" type="xs:string" />
+			<xs:element name="step2" type="xs:string" />
+			<xs:element name="step3" type="xs:string" />
+			<xs:element name="step4" type="xs:string" />
+			<xs:element name="step5" type="xs:string" />
+			<xs:element name="step6" type="xs:string" />
+			<xs:element name="step7" type="xs:string" />
+			<xs:element name="step8" type="xs:string" />
+			<xs:element name="step9" type="xs:string" />
+			<xs:element name="step10" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

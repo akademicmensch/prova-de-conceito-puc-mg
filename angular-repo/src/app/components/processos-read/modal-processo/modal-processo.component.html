@@ -1,0 +1,28 @@
+<div style="margin: auto; text-align: center; width: 100%; height: 100%;">
+    <mat-form-field class="example-full-width" style="width: 100%; height: 100%;">
+        <mat-label>Processo</mat-label>
+        <textarea matInput [(ngModel)]="nomeProcesso" disabled>{{nomeProcesso}}</textarea>
+      </mat-form-field>
+
+      <mat-label>Detalhes</mat-label>
+      <mat-form-field class="example-full-width" style="width: 100%; height: 100%;">
+        
+      <textarea matInput [(ngModel)]="etapa1" disabled>{{etapa1}}</textarea>
+      <textarea matInput [(ngModel)]="etapa2" disabled>{{etapa2}}</textarea>
+      <textarea matInput [(ngModel)]="etapa3" disabled>{{etapa3}}</textarea>
+      <textarea matInput [(ngModel)]="etapa4" disabled>{{etapa4}}</textarea>
+      <textarea matInput [(ngModel)]="etapa5" disabled>{{etapa5}}</textarea>
+      <textarea matInput [(ngModel)]="etapa6" disabled>{{etapa6}}</textarea>
+      <textarea matInput [(ngModel)]="etapa7" disabled>{{etapa7}}</textarea>
+      <textarea matInput [(ngModel)]="etapa8" disabled>{{etapa8}}</textarea>
+      <textarea matInput [(ngModel)]="etapa9" disabled>{{etapa9}}</textarea>
+      <textarea matInput [(ngModel)]="etapa10" disabled>{{etapa10}}</textarea>
+      </mat-form-field>
+    
+      <div style="text-align: end;">
+        <button mat-raised-button (click)="close()" >
+          Fechar
+      </button>
+
+      </div>
+</div>

@@ -1,0 +1,88 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+
+<h2>Vendas de Hoje</h2>
+<table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp" style="width: 100%;">
+    <thead>
+      <tr>
+        <th class="mdl-data-table__cell--non-numeric">Material</th>
+        <th>Quantidade Vendida</th>
+        <th>Preço</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="mdl-data-table__cell--non-numeric">{{diatecidoSintetico}}</td>
+        <td>{{diaquantidadeVendaTecidoSintetico}}</td>
+        <td>{{diavalorVendaTecidoSintetico}}</td>
+      </tr>
+      <tr>
+        <td class="mdl-data-table__cell--non-numeric">{{diatecidoSemiSintetico}}</td>
+        <td>{{diaquantidadeVendaTecidoSemiSintetico}}</td>
+        <td>{{diavalorVendaTecidoSemiSintetico}}</td>
+      </tr>
+      <tr>
+        <td class="mdl-data-table__cell--non-numeric">{{diatecidoNatural}}</td>
+        <td>{{diaquantidadeVendaTecidoNatural}}</td>
+        <td>{{diavalorVendaTecidoNatural}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+<br>
+<h2>Vendas deste mês - {{mesmesAtual}}</h2>
+<table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp" style="width: 100%;">
+    <thead>
+      <tr>
+        <th class="mdl-data-table__cell--non-numeric">Material</th>
+        <th>Quantidade Vendida</th>
+        <th>Preço</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="mdl-data-table__cell--non-numeric">{{mestecidoSintetico}}</td>
+        <td>{{mesquantidadeVendaTecidoSintetico}}</td>
+        <td>{{mesvalorVendaTecidoSintetico}}</td>
+      </tr>
+      <tr>
+        <td class="mdl-data-table__cell--non-numeric">{{mestecidoSemiSintetico}}</td>
+        <td>{{mesquantidadeVendaTecidoSemiSintetico}}</td>
+        <td>{{mesvalorVendaTecidoSemiSintetico}}</td>
+      </tr>
+      <tr>
+        <td class="mdl-data-table__cell--non-numeric">{{mestecidoNatural}}</td>
+        <td>{{mesquantidadeVendaTecidoNatural}}</td>
+        <td>{{mesvalorVendaTecidoNatural}}</td>
+      </tr>
+    </tbody>
+  </table>
+<br>
+<h2>Vendas deste ano  - {{anoanoAtual}}</h2>
+<table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp" style="width: 100%;">
+    <thead>
+      <tr>
+        <th class="mdl-data-table__cell--non-numeric">Material</th>
+        <th>Quantidade Vendida</th>
+        <th>Preço</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="mdl-data-table__cell--non-numeric">{{anotecidoSintetico}}</td>
+        <td>{{anoquantidadeVendaTecidoSintetico}}</td>
+        <td>{{anovalorVendaTecidoSintetico}}</td>
+      </tr>
+      <tr>
+        <td class="mdl-data-table__cell--non-numeric">{{anotecidoSemiSintetico}}</td>
+        <td>{{anoquantidadeVendaTecidoSemiSintetico}}</td>
+        <td>{{anovalorVendaTecidoSemiSintetico}}</td>
+      </tr>
+      <tr>
+        <td class="mdl-data-table__cell--non-numeric">{{anotecidoNatural}}</td>
+        <td>{{anoquantidadeVendaTecidoNatural}}</td>
+        <td>{{anovalorVendaTecidoNatural}}</td>
+      </tr>
+    </tbody>
+  </table>

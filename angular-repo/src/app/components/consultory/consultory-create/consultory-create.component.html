@@ -1,0 +1,40 @@
+<mat-card>
+    <mat-card-title>Contratar Consultoria</mat-card-title>
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Nome"
+                [(ngModel)]="consultoria.descricao" name="nome">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="CNPJ"
+                [(ngModel)]="consultoria.cnpj" name="cnpj">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Inicio do contrato"
+                [(ngModel)]="consultoria.inicioContrato" name="inicioContrato">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Fim do contrato"
+                [(ngModel)]="consultoria.fimContrato" name="fimContrato">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Processo</mat-label>
+            <mat-select [(ngModel)]="consultoria.processo" name="processo">
+              <mat-option *ngFor="let processo of processos" [value]="processo.nome">
+                {{processo.nome}}
+              </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+    </form>
+    <button mat-raised-button (click)="createConsultoria()" color="primary">
+        Salvar
+    </button>
+    <button mat-raised-button (click)="cancel()">
+        Cancelar
+    </button>
+</mat-card>

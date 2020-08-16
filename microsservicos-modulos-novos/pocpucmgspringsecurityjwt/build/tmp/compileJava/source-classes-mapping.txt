@@ -1,0 +1,21 @@
+br/com/sigo/springsecurityjwt/filters/JwtRequestFilter.java
+ br.com.sigo.springsecurityjwt.filters.JwtRequestFilter
+br/com/sigo/springsecurityjwt/util/JwtUtil.java
+ br.com.sigo.springsecurityjwt.util.JwtUtil
+br/com/sigo/springsecurityjwt/services/MyUserDetailsService.java
+ br.com.sigo.springsecurityjwt.services.MyUserDetailsService
+ br.com.sigo.springsecurityjwt.services.MyUserDetailsService$1
+br/com/sigo/springsecurityjwt/models/AuthenticationRequest.java
+ br.com.sigo.springsecurityjwt.models.AuthenticationRequest
+br/com/sigo/springsecurityjwt/models/SampleUser.java
+ br.com.sigo.springsecurityjwt.models.SampleUser
+br/com/sigo/springsecurityjwt/SpringSecurityJwtApplication.java
+ br.com.sigo.springsecurityjwt.SpringSecurityJwtApplication
+br/com/sigo/springsecurityjwt/config/WebSecurityConfig.java
+ br.com.sigo.springsecurityjwt.config.WebSecurityConfig
+br/com/sigo/springsecurityjwt/repositories/UserRepository.java
+ br.com.sigo.springsecurityjwt.repositories.UserRepository
+br/com/sigo/springsecurityjwt/controllers/AuthenticationController.java
+ br.com.sigo.springsecurityjwt.controllers.AuthenticationController
+br/com/sigo/springsecurityjwt/models/AuthenticationResponse.java
+ br.com.sigo.springsecurityjwt.models.AuthenticationResponse

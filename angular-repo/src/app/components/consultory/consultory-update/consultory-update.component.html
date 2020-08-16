@@ -1,0 +1,23 @@
+<mat-card>
+    <mat-card-title>Prorrogar Contrato</mat-card-title>
+    <form>
+
+        <mat-form-field>
+            <input matInput placeholder="Nome"
+                [(ngModel)]="consultoria.descricao" name="descricao">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Data Fim"
+                [(ngModel)]="consultoria.fimContrato" name="fimContrato">
+        </mat-form-field>
+
+    </form>
+    <button mat-raised-button (click)="updateConsultoria()" color="primary" class="form-input">
+        Atualizar
+    </button>
+    
+    <button mat-raised-button (click)="cancel()" class="form-put">
+        Cancelar
+    </button>
+</mat-card>

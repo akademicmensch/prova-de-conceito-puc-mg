@@ -1,0 +1,69 @@
+<mat-card>
+    <mat-card-title>Criar Norma</mat-card-title>
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Nome"
+                [(ngModel)]="norma.nome" name="nome">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Descricao"
+                [(ngModel)]="norma.descricao" name="descricao">
+        </mat-form-field>
+
+
+        <mat-form-field appearance="fill">
+            <mat-label>Categoria</mat-label>
+            <mat-select [(ngModel)]="norma.categoria" name="categoria">
+              <mat-option *ngFor="let categoria of categorias" [value]="categoria.id">
+                {{categoria.descricao}}
+              </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <!--<select>
+            <option *ngFor="let categoria of categorias" [value]= "categoria.id" name="categoria" [(ngModel)]="norma.categoria">
+              {{categoria.descricao}}
+            </option>
+        </select>-->
+
+        <!--<select>
+            <option *ngFor="let consultoria of consultorias" [value]= "consultoria.id" name="consultoria" [(ngModel)]="norma.consultoria">
+                {{consultoria.descricao}}
+            </option>
+        </select>-->
+
+        <mat-form-field appearance="fill">
+            <mat-label>Consultoria</mat-label>
+            <mat-select [(ngModel)]="norma.consultoria" name="consultoria">
+              <mat-option *ngFor="let consultoria of consultorias" [value]="consultoria.id">
+                {{consultoria.descricao}}
+              </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <!--Processo
+        <select>
+            <option *ngFor="let processo of processos" [value]= "processo.nome" name="processo" [(ngModel)]="norma.processo">
+                {{processo.nome}}
+            </option>
+        </select>-->
+
+        <mat-form-field appearance="fill">
+            <mat-label>Processo</mat-label>
+            <mat-select [(ngModel)]="norma.processo" name="processo">
+              <mat-option *ngFor="let processo of processos" [value]="processo.nome">
+                {{processo.nome}}
+              </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+
+    </form>
+    <button mat-raised-button (click)="createNorma()" color="primary">
+        Salvar
+    </button>
+    
+    <button mat-raised-button (click)="cancel()">
+        Cancelar
+    </button>
+</mat-card>

@@ -1,0 +1,63 @@
+plugins {
+    id 'java'
+    id 'io.spring.dependency-management' version "1.0.9.RELEASE"
+    id 'org.springframework.boot' version '2.2.5.RELEASE'
+    id 'pl.allegro.tech.build.axion-release' version '1.10.1'
+    id 'com.palantir.docker' version '0.25.0'
+    id 'com.palantir.docker-run' version '0.25.0'
+    id 'jp.classmethod.aws.cloudformation' version '0.41'
+}
+
+version = scmVersion.version
+
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+dependencies {
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-security', version:'2.1.9.RELEASE'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version:'2.1.9.RELEASE'
+    compile group: 'io.jsonwebtoken', name: 'jjwt', version:'0.9.1'
+    compile group: 'javax.xml.bind', name: 'jaxb-api', version:'2.3.0'
+    testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test', version:'2.1.9.RELEASE'
+    testCompile group: 'org.springframework.security', name: 'spring-security-test', version:'5.1.6.RELEASE'
+}
+
+String dockerHubUsernameProperty = findProperty('dockerHubUsername') ?: 'akademikmensch'
+String imageName = "${dockerHubUsernameProperty}/pocpucmgspringsecurityjwt:$version"
+
+docker {
+	name imageName
+	files "build/libs/${bootJar.archiveFileName.get()}"
+	buildArgs([JAR_FILE: bootJar.archiveFileName.get()])
+}
+
+dockerRun {
+	name project.name
+	image imageName
+	ports '8080:8080'
+	clean true
+}
+
+import com.amazonaws.services.cloudformation.model.Capability
+
+aws {
+    region = findProperty('region') ?: 'us-east-1'
+}
+
+cloudFormation {
+	stackName "$project.name-stack"
+	stackParams([
+		SubnetID: findProperty('subnetId') ?: '',
+		ServiceName: project.name,
+		ServiceVersion: project.version,
+		DockerHubUsername: dockerHubUsernameProperty
+	])
+	templateFile project.file("ecs.yml")
+}

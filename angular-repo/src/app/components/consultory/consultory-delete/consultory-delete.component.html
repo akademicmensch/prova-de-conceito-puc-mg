@@ -1,0 +1,37 @@
+<mat-card>
+    <mat-card-title>Finalizar Contrato Consultoria</mat-card-title>
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Nome"
+                [value]="consultoria.descricao" name="descricao" disabled>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="CNPJ"
+                [value]="consultoria.cnpj" name="descricao" disabled>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Inicio Contrato"
+                [value]="consultoria.inicioContrato" name="descricao" disabled>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Fim Contrato"
+                [value]="consultoria.fimContrato" name="descricao" disabled>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Processo"
+                [value]="consultoria.processo" name="descricao" disabled>
+        </mat-form-field>
+
+    </form>
+    <button mat-raised-button (click)="deleteConsultoria()" color="warn">
+        Excluir
+    </button>
+    
+    <button mat-raised-button (click)="cancel()">
+        Cancelar
+    </button>
+</mat-card>

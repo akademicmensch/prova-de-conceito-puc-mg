@@ -1,0 +1,55 @@
+spring:
+  cloud:
+    gateway:
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedHeaders:
+              - content-type
+              - authorization
+            allowedMethods:
+              - GET
+              - POST
+              - DELETE
+              - PUT
+              - OPTIONS
+    
+      routes:
+        - id: pocpucmgspringsecurityjwtmaven
+          uri: lb://pocpucmgspringsecurityjwtmaven
+          predicates:
+            - Path=/auth/**
+        
+        - id: API-NORMAS
+          uri: lb://API-NORMAS
+          predicates:
+            - Path=/normas/v1/**
+
+        - id: API-MONITOR-VENDAS
+          uri: lb://API-MONITOR-VENDAS
+          predicates:
+            - Path=/sales/v1/**
+            
+        - id: API-PROCESSO-INDUSTRIAL
+          uri: lb://API-PROCESSO-INDUSTRIAL
+          predicates:
+            - Path=/industrialProcess/v1/**
+            
+        - id: API-CRYSTAL-REPORTS
+          uri: lb://API-CRYSTAL-REPORTS
+          predicates:
+            - Path=/reports/v1/**
+            
+        - id: API-CONSULTORIAS
+          uri: lb://API-CONSULTORIAS
+          predicates:
+            - Path=/consultorias/v1/**
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    hostname: localhost

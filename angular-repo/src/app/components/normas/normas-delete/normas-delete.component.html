@@ -1,0 +1,20 @@
+<mat-card>
+    <mat-card-title>Inativar Norma</mat-card-title>
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Nome"
+                [value]="norma.nome" name="nome" disabled>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Descricao"
+                [value]="norma.descricao" name="descricao" disabled>
+        </mat-form-field>
+    </form>
+    <button mat-raised-button (click)="deleteNorma()" color="warn">
+        Excluir
+    </button>
+    
+    <button mat-raised-button (click)="cancel()">
+        Cancelar
+    </button>
+</mat-card>

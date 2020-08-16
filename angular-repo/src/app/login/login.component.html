@@ -1,0 +1,21 @@
+<div class="telaLogin">
+<div class="cabecalho">
+
+</div>
+
+<div class="divLogin">
+  <img src="assets/img/logo1.png" alt="logo" style="margin-top: -50px;">
+  <mat-form-field class="example-form-field campo">
+      <mat-label class="labelLogin">Usuario</mat-label>
+      <input matInput type="text" [(ngModel)]="usuario">
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-form-field campo">
+      <mat-label class="labelLogin">Senha</mat-label>
+      <input matInput type="password"  [(ngModel)]="senha">
+    </mat-form-field>
+    <br>
+    <button mat-button color="primary" class="buttomLogin" (click)="acessar()">Entrar</button>
+</div>
+
+</div>

@@ -1,0 +1,2 @@
+io/javabrains/springsecurityjwt/SpringSecurityJwtApplicationTests.java
+ io.javabrains.springsecurityjwt.SpringSecurityJwtApplicationTests

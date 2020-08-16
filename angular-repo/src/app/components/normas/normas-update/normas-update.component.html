@@ -1,0 +1,55 @@
+<mat-card>
+    <mat-card-title>Alterar Produto</mat-card-title>
+    <form>
+
+        <mat-form-field class="formInput">
+            <input matInput placeholder="Nome"
+                [(ngModel)]="norma.nome" name="nome">
+        </mat-form-field>
+
+      
+
+        <mat-form-field class="formInput">
+            <input matInput placeholder="Descricao" (click)="openDialog()"
+                [(ngModel)]="norma.descricao" name="descricao">
+        </mat-form-field>
+
+
+    <mat-form-field appearance="fill" class="formInput">
+            <mat-label>Categoria</mat-label>
+            <mat-select [(ngModel)]="norma.categoria" name="categoria">
+              <mat-option *ngFor="let categoria of categorias" [value]="categoria.id">
+                {{categoria.descricao}}
+              </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="formInput">
+            <mat-label>Consultoria</mat-label>
+            <mat-select [(ngModel)]="norma.consultoria" name="consultoria">
+              <mat-option *ngFor="let consultoria of consultorias" [value]="consultoria.id">
+                {{consultoria.descricao}}
+              </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+
+        <mat-form-field appearance="fill" class="formInput">
+            <mat-label>Processo</mat-label>
+            <mat-select [(ngModel)]="norma.processo" name="processo">
+              <mat-option *ngFor="let processo of processos" [value]="processo.nome">
+                {{processo.nome}}
+              </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+
+    </form>
+    <button mat-raised-button (click)="update()" color="primary" style="margin: 0px 10px 0px 10px;">
+        Atualizar
+    </button>
+    
+    <button mat-raised-button (click)="cancel()"  style="margin: 0px 10px 0px 10px;">
+        Cancelar
+    </button>
+</mat-card>
