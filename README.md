@@ -1,5 +1,5 @@
 # POC para proposta arquitetural
-https://img.shields.io/badge/maintainer-guilherme.batista-blue
+(https://img.shields.io/badge/maintainer-guilherme.batista-blue)
 
 
 Este é o repositório contendo os programas referentes à proposta arquitetural para o sistema SIGO.
